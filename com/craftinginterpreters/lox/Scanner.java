@@ -1,6 +1,13 @@
 package com.craftinginterpreters.lox;
 
-class Scanner {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static com.craftinginterpreters.lox.TokenType.*;
+
+public class Scanner {
     private final String source;
     private final List<Token> tokens = new ArrayList<>();
     private int start = 0;
@@ -134,6 +141,8 @@ class Scanner {
     private boolean isAtEnd() {
         return current >= source.length();
     }
+
+    private static final Map<String, TokenType> keywords;
 
     static {
         keywords = new HashMap<>();
