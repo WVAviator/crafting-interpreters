@@ -119,6 +119,9 @@ public class Scanner {
             return;
         }
         advance();
+
+        String value = source.substring(start + 1, current - 1);
+        addToken(STRING, value);
     }
 
     private char peek() {
